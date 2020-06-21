@@ -49,17 +49,16 @@ $(document).ready(function () {
 
     if (file) {
       var data;
-
       data = new FormData();
       data.append("file", $("#input-file")[0].files[0]);
       e.target.elements.msg.value = "File Upload";
       $.ajax({
         url: "/api/message",
+        type: "POST",
         processData: false,
         contentType: false,
-        // contentType: "multipart/form-data",
         data,
-        type: "POST",
+
         success: ({ file }) => {
           socket.emit("chatFile", file);
         },
