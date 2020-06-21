@@ -46,13 +46,13 @@ $(document).ready(function () {
   chatForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const file = e.target.elements["input-file"].value;
-    e.target.elements.msg.value = "File Upload";
+
     if (file) {
       var data;
 
       data = new FormData();
       data.append("file", $("#input-file")[0].files[0]);
-
+      e.target.elements.msg.value = "File Upload";
       $.ajax({
         url: "/api/message",
         processData: false,
