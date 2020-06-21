@@ -38,10 +38,15 @@ $(document).ready(function () {
   //   e.target.elements.msg.value = "";
   //   e.target.elements.msg.focus();
   // });
+
+  $("#input-file").on("input", () => {
+    $("#msg").val($("#input-file").val());
+  });
+
   chatForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const file = e.target.elements["input-file"].value;
-    e.target.elements.msg.value = file;
+    e.target.elements.msg.value = "File Upload";
     if (file) {
       var data;
 
@@ -61,6 +66,7 @@ $(document).ready(function () {
       });
       e.target.elements.msg.value = "";
       e.target.elements.msg.focus();
+      $("#input-file").val("");
     } else {
       //Message Text
       const msg = e.target.elements.msg.value;

@@ -20,12 +20,17 @@
     <title>ChatCord App</title>
   </head>
   <body class="bg-light">
-    <div class="container d-flex justify-content-center">
-      <div class="card w-50 shadow mt-5 mx-auto">
+    <div class="container d-flex justify-content-center min-vh-100">
+      <div
+        class="card shadow mt-5 mx-auto"
+        style="min-width: 200px; width: 35%; height: 350px;"
+      >
         <header class="card-header bg-primary text-light">
-          <h1 class="text-center"><i class="fas fa-smile"></i> ChatCord</h1>
+          <div class="text-center h3">
+            <i class="fas fa-smile"></i> ChatCord
+          </div>
         </header>
-        <div class="card-body p-4 bg-info text-white" style="min-width: 400px;">
+        <div class="card-body p-4 bg-info text-white">
           <form action="chat.html">
             <div class="form-group">
               <label for="username">Username</label>
