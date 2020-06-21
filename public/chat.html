@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <title>ChatCord App</title>
+  </head>
+  <body class="bg-light">
+    <div class="container d-flex justify-content-center min-vh-100">
+      <div class="card m-auto shadow w-75">
+        <header
+          class="card-header bg-primary text-white d-flex justify-content-between align-content-center"
+        >
+          <h1><i class="fas fa-smile"></i> ChatCord</h1>
+          <a href="index.html" class="btn btn-light align-self-center"
+            >Leave Room</a
+          >
+        </header>
+        <div class="card-body d-flex p-0" style="min-height: 400px;">
+          <div class="chat-sidebar bg-info text-white pt-3 pr-3 p-3 w-25">
+            <h5><i class="fas fa-comments"></i> Room Name:</h5>
+            <div id="room-name" class="text-light text-center">JavaScript</div>
+            <h5><i class="fas fa-users"></i> Users</h5>
+            <ul id="users" class="list-group list-group-flush"></ul>
+          </div>
+          <div
+            class="w-75 chat-messages overflow-auto"
+            style="height: 500px;"
+          ></div>
+        </div>
+        <div class="card-footer bg-primary">
+          <!-- <form
+            id="chat-form"
+            method="POST"
+            action="/api/message"
+            enctype="multipart/form-data"
+          > -->
+          <form id="chat-form">
+            <div class="form-row">
+              <div class="col-md-12 col-sm-2 h-100 w-100 align-center m-auto">
+                <label for="input-file" class="btn btn-light"
+                  ><i class="fa fa-paperclip"></i
+                ></label>
+                <input type="file" name="file" id="input-file" class="d-auto" />
+              </div>
+              <div class="col-md-9 col-sm-6">
+                <textarea
+                  id="msg"
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Message"
+                  autocomplete="off"
+                ></textarea>
+              </div>
+              <button class="btn col-md-2 col-sm-4 bg-light">
+                <i class="fas fa-paper-plane"></i> Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
